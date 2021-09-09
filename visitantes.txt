@@ -1,0 +1,6 @@
+Frodo,100,18,Aventura
+Sam,250,4,Paisaje
+Pippin,30,16,Desgustacion
+Merry,100,30,Desgustacion
+Legolas,12,16,Paisaje
+Gimli,70,3,Aventura

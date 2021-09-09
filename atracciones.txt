@@ -1,0 +1,25 @@
+Moria,10,2,10,Aventura,0
+Mordor,25,3,4,Aventura,1
+Bosque Negro,3,4,12,Aventura,2
+Cienaga de los muertos,4,2,25,Aventura,3
+Fangorn,12,5,7,Aventura,4
+Sendero de los Muertos,8,3,3,Aventura,5
+Quebradas de los Tumulos,6,1,17,Aventura,6
+Rio Brandivino,3,2,15,Aventura,7
+La Comarca,3,6.5,150,Desgustacion,8
+Bree,15,30,2,Desgustacion,9
+Lothlorien,35,1,30,Desgustacion,10
+Hobbiton,45,4,3,Desgustacion,11
+Rohan,9,3,21,Desgustacion,12
+Hithlum,12,1,8,Desgustacion,13
+Eriador,10,3,14,Desgustacion,14
+Gondor,43,4,30,Desgustacion,15
+Abismo de Helm,5,2,15,Paisaje,16
+Rivendel,100,4,12,Paisaje,17
+Colinas Nubladas,23,1,12,Paisaje,18
+Bosque Viejo,3,3,20,Paisaje,19
+Isengard,14,5,8,Paisaje,20
+Rhovanion,10,4,20,Paisaje,21
+Minas Tirith,5,2.5,25,Paisaje,22
+Erebor,12,3,32,Paisaje,23
+Rhun,32,4,12,Paisaje,24

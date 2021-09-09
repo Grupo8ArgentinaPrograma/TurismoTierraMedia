@@ -1,0 +1,9 @@
+porcentual,Pack aventura %50 descuento,50,Aventura,0,1,2
+porcentual,Pack degustación %20 descuento,20,Desgustacion,8,10,12
+porcentual,Pack paisaje %10 descuento,10,Paisaje,24,23,22
+axb,Pack una aventura gratis,20,Aventura,7,6,5
+axb,Pack una desgustacion gratis,20,Desgustacion,15,13,11
+axb,Pack un paisaje gratis,20,Paisaje,18,19,20
+absoluta,Pack aventura,20,Aventura,3,4,5
+absoluta,Pack desgustacion,20,Desgustacion,9,14,15
+absoluta,Pack paisaje,20,Paisaje,16,17,24
