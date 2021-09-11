@@ -114,7 +114,7 @@ public class Sistema {
 					|| visitante.getproductosComprados().contains(producto))) {
 				cantidad++;
 			
-			}else  if (visitante.atraccionIncluidaEnPromocionComprada(producto) && !((visitante.getDineroDisponible() < producto.getCosto()
+			} if (visitante.atraccionIncluidaEnPromocionComprada(producto) && !((visitante.getDineroDisponible() < producto.getCosto()
 					|| visitante.getTiempoDisponible() < producto.getTiempo() || (!producto.tieneCupo())
 					|| visitante.getproductosComprados().contains(producto)))) {
 				
