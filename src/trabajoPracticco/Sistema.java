@@ -152,8 +152,8 @@ public class Sistema {
 						continue;
 					}
 
-					System.out.println("\n "+visitante.getNombre() + " queres comprar" + producto+"\n");
-					System.out.print(" 1 para comprar 2 para seguir>>");
+					System.out.println("\n ¿"+visitante.getNombre() + " queres comprar?" + producto+"\n");
+					System.out.print(" Apreta 1 para comprar, cualquier otro numero para ver otra oferta >>");
 					respuesta = escaner.nextInt();
 
 					if (respuesta == 1) {
@@ -162,8 +162,8 @@ public class Sistema {
 				}
 
 			}
-			System.out.println("\n" + visitante.getNombre() + " terminste de comprar gasto: " +getGastoTotal(visitante)
-			+ " recorrio: " + getTiempoTotalARecorrer(visitante));
+			System.out.println("\n" + visitante.getNombre() + " terminaste de comprar gasto: " +getGastoTotal(visitante)
+			+ " recorrido: " + getTiempoTotalARecorrer(visitante));
 			imprimirFactura(visitante);
 		}	
 		escaner.close();
