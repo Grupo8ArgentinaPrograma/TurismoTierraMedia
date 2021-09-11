@@ -112,15 +112,14 @@ public class Sistema {
 			if (!(visitante.getDineroDisponible() < producto.getCosto()
 					|| visitante.getTiempoDisponible() < producto.getTiempo() || (!producto.tieneCupo())
 					|| visitante.getproductosComprados().contains(producto))) {
-
 				cantidad++;
-			}
-		}
-
-		for (Ofertable producto : ofertasDiaria) {
-			if (visitante.atraccionIncluidaEnPromocionComprada(producto)) {
+			
+			}else  if (visitante.atraccionIncluidaEnPromocionComprada(producto) && !((visitante.getDineroDisponible() < producto.getCosto()
+					|| visitante.getTiempoDisponible() < producto.getTiempo() || (!producto.tieneCupo())
+					|| visitante.getproductosComprados().contains(producto)))) {
+				
 				cantidad--;
-			}
+			}		
 		}
 
 		return cantidad;
