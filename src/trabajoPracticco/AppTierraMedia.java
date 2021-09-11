@@ -44,12 +44,12 @@ public class AppTierraMedia {
 				+ "");
 
 		System.out.println("   ******************************************************");
-		System.out.println("      “Es peligroso, Frodo, curzar tu puerta.\n"
+		System.out.println("      â€œEs peligroso, Frodo, cruzar tu puerta.\n"
 				+ "     Pones un pie en el camino, y si no cuidas tus pasos,\n"
-				+ "     nunca sabes a dónde te puede llevar.”" );	
+				+ "     nunca sabes a dÃ³nde te puede llevar.â€" );	
 
 		System.out.println("   ******************************************************");
-		System.out.println("\nBienvenido a la tierra media!!!");
+		System.out.println("\nBienvenido a la Tierra Media!!!");
 		System.out.println("\nPara comenzar por favor realice los siguientes pasos:");
 
 		System.out.print("1) Introduzca el nombre del archivo que contiene las atracciones >>>");
@@ -57,7 +57,7 @@ public class AppTierraMedia {
 	    sistema.cargarAtracciones(nombreArchivo);
 	//	sistema.cargarAtracciones("atracciones.txt");
 		System.out.println();
-		System.out.print("3) Introduzca el nombre del archivo que contiene las promociones del dia >>>");
+		System.out.print("2) Introduzca el nombre del archivo que contiene las promociones del dia >>>");
 		nombreArchivo=escaner.next();
 	//	sistema.cargarPromociones("promociones.txt");
 	    sistema.cargarPromociones(nombreArchivo);
@@ -65,7 +65,7 @@ public class AppTierraMedia {
 		
 		
 
-		System.out.print("2) Introduzca el nombre del archivo que contiene los usuarios del días >>>");
+		System.out.print("3) Introduzca el nombre del archivo que contiene los usuarios del dÃ­as >>>");
 		nombreArchivo=escaner.next();
 	  sistema.cargarUsuarios( nombreArchivo);
 	//	sistema.cargarUsuarios("visitantes.txt");
