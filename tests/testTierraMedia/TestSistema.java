@@ -26,7 +26,7 @@ public class TestSistema {
 		a2 = new Atraccion("Mordor dos", 25, 10, 5, "Aventura");
 		a3 = new Atraccion("Mordor tres", 25, 10, 5, "Aventura");
 		a4 = new Atraccion("Mordor cuatro", 25, 10, 5, "Aventura");
-		u1 = new Usuario("nombre", 1000, 1000, "Aventura");
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");
 		s1 = new Sistema();
 		s1.cargarUsuarios("visitantes.txt");
 		s1.cargarAtracciones("atracciones.txt");	
@@ -61,6 +61,90 @@ public class TestSistema {
 	public void queSistemaAgregapromocionesDesdeArchivo() {
 		s1.cargarAtracciones("atracciones.txt");	
 		s1.cargarPromociones("promociones.txt");
-		assertNotNull(s1.getPromociones());	}
+		assertNotNull(s1.getPromociones());	
+		}
 
+	@Test
+	public void  queSistemaCuentaTodasLasPromocionesAofrecer() {
+		s1.setOfertas(u1);
+		assertEquals(34,s1.cantidadDeAOfertas(u1));
+	}
+	
+	
+	@Test
+	public void  queSistemaSoloCuentaLasPromocionesyAtraccionesQueElUsuarioPuedePgar() {
+		u1 = new Usuario("nombre", 10,20000, "Aventura");
+		s1.setOfertas(u1);
+		assertEquals(14,s1.cantidadDeAOfertas(u1));
+	}
+	
+	@Test
+	public void  queSistemaSoloCuentaLasPromocionesyAtraccionesQueElUsuarioPuedeRecorrer() {
+		u1 = new Usuario("nombre", 2000,2, "Aventura");
+		s1.setOfertas(u1);
+		assertEquals(8,s1.cantidadDeAOfertas(u1));
+	}
+	
+	@Test
+	public void  queSistemaSoloCuentaLasAtraccioensQueTienenCupo() {
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");
+		s1.setOfertas(u1);
+		u1.comprarProducto(s1.getAtracciones().get(21));
+		assertEquals(33,s1.cantidadDeAOfertas(u1));
+	}
+	
+	@Test
+	public void  queSistemaSoloCuentaLasPromocionesQueTienenCupo() {
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");
+		s1.setOfertas(u1);
+		u1.comprarProducto(s1.getOfertasDiaria().get(3));
+		u1.comprarProducto(s1.getOfertasDiaria().get(3));
+		u1.comprarProducto(s1.getOfertasDiaria().get(3));
+		u1.comprarProducto(s1.getOfertasDiaria().get(3));
+		assertEquals(32,s1.cantidadDeAOfertas(u1));
+	}
+	
+	@Test
+	public void  queSistemaNoCuentaOfertasYaCompradas() {
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");
+		u1.comprarProducto(s1.getAtracciones().get(0));			
+		s1.setOfertas(u1);
+		
+		assertEquals(33,s1.cantidadDeAOfertas(u1));
+	
+	}
+	
+	@Test
+	public void  queSistemaOrdenaDeMayorAmenor() {
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");		
+		s1.setOfertas(u1);
+		double primerCosto=s1.getOfertasDiaria().get(0).getCosto();
+		double segundoCosto=s1.getOfertasDiaria().get(1).getCosto();
+		assertTrue(primerCosto>=segundoCosto);	
+	}
+	
+	@Test
+	public void  queSistemaOrdenaPrimeroPromocionesLuegoAtracciones() {
+		u1 = new Usuario("nombre", 2000,20000, "Aventura");		
+		s1.setOfertas(u1);
+		assertTrue(s1.getOfertasDiaria().get(0) instanceof Promocion);
+		assertTrue(s1.getOfertasDiaria().get(1) instanceof Promocion);
+		assertTrue(s1.getOfertasDiaria().get(2) instanceof Promocion);
+		assertTrue(s1.getOfertasDiaria().get(3) instanceof Atraccion);
+		
+	}
+	
+	@Test
+	public void queSistemaOrdenaPrimeroPromocionesConElTipoPreferidoDelUsuarioAtracciones() {
+		u1 = new Usuario("nombre", 2000, 20000, "Aventura");
+		s1.setOfertas(u1);
+		for (int i = 0; i < 34; i++) {
+			if(i<11) {
+				assertTrue(s1.getOfertasDiaria().get(i).getTipo().equals("Aventura"));
+			}else{
+				assertFalse(s1.getOfertasDiaria().get(i).getTipo().equals("Aventura"));
+			}
+		}	
+	}
+	
 }
